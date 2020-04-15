@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import androidx.appcompat.widget.Toolbar;
 
 import sd.jeeran.ui.main.SectionsPagerAdapter;
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
+        Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
