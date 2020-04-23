@@ -5,8 +5,11 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.io.IOException;
@@ -28,18 +31,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FloatingActionButton fab = findViewById(R.id.fab);
+        Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        //getSupportActionBar().setIcon(0);
+
         //MainContentFragment mainContentFragment = new MainContentFragment();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment, MainContentFragment.newInstance(0))
                 .commit();
-
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setSupportActionBar(toolbar);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,19 +53,35 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void loadPage(){
+    private void loadPage() {
+
         JeeranApi services = JApplication.getInstance().getServices();
-       services.getHome().enqueue(new Callback<String>() {
-           @Override
-           public void onResponse(Call<String> call, Response<String> response) {
+        services.getHome().enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
 
-           }
+            }
 
-           @Override
-           public void onFailure(Call<String> call, Throwable t) {
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
 
-           }
-       });
+            }
+        });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
     }
 }
