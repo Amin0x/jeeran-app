@@ -1,8 +1,10 @@
 package sd.jeeran.ui.adapter;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -36,8 +38,16 @@ public class MainContentActivityAdapter extends RecyclerView.Adapter<MainContent
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        int type = 0 /*data.get(viewType).getType()*/;
+        int type =  -1;
         View view = null;
+
+        if(data.size() > 0){
+            type = data.get(viewType).type;
+        }
+
+        if(type == -1){
+            view = inflater.inflate(R.layout.main_content_no_item, parent, false);
+        }
 
         if (type == 0){
             view = inflater.inflate(R.layout.main_content_item_0, parent, false);
@@ -57,6 +67,10 @@ public class MainContentActivityAdapter extends RecyclerView.Adapter<MainContent
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+        if (data.size() == 0){
+            return;
+        }
+
         MainContentFragment.DataListItem item = data.get(position);
 
         holder.view.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +83,18 @@ public class MainContentActivityAdapter extends RecyclerView.Adapter<MainContent
 
     @Override
     public int getItemCount() {
+        if (data.size() == 0){
+            return 1;
+        }
+
         return data.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (data.size() == 0){
+            return -1;
+        }
+        return data.get(position).type;
     }
 }

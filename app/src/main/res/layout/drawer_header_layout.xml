@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorSecondary"
+    android:background="@color/colorAccent"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -12,6 +12,7 @@
         android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/ic_person_white_48dp"
         tools:srcCompat="@tools:sample/avatars[0]" />
@@ -21,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="name name name"
+        android:text="your name"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_background"
         android:textSize="18sp" />

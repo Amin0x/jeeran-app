@@ -3,29 +3,73 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryLight"
+    android:background="@color/colorBackground"
     android:layout_marginBottom="8dp"
     android:layout_marginTop="8dp">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="No items to show try later.."
+        android:text="الخرطوم"
         android:textAlignment="center"
         android:textSize="15sp"
         android:textStyle="bold" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/textView_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="ام وثلاثة اطفال تحتاج مساعدة من زوي الفضل"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_report"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:layout_weight="0"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
         android:background="#2AAA57"
         android:elevation="3dp"
-        android:text="reload"
+        android:text="تبليغ"
         android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/button_show"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:background="#2AAA57"
+        android:elevation="3dp"
+        android:text="عرض"
+        android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
