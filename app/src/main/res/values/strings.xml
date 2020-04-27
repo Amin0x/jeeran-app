@@ -23,4 +23,5 @@
         "للتبرع يجب عليك تسجيل اسمك ورقم هاتفك"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_profile">ProfileActivity</string>
 </resources>
